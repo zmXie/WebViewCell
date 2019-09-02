@@ -7,6 +7,7 @@
 //
 
 #import "WCViewController.h"
+#import "WCTableViewController.h"
 
 @interface WCViewController ()
 
@@ -20,10 +21,15 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)kvoDetail:(id)sender {
+    WCTableViewController *vc = [WCTableViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)fixedDetail:(id)sender {
+    WCTableViewController *vc = [WCTableViewController new];
+    vc.fixedHeight = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

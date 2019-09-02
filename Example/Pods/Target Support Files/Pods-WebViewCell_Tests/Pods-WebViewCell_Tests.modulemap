@@ -1,0 +1,6 @@
+framework module Pods_WebViewCell_Tests {
+  umbrella header "Pods-WebViewCell_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

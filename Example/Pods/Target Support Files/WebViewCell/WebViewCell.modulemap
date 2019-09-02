@@ -1,0 +1,6 @@
+framework module WebViewCell {
+  umbrella header "WebViewCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

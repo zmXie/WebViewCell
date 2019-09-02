@@ -1,0 +1,33 @@
+PODS:
+  - Masonry (1.1.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - WebViewCell (0.1.0):
+    - Masonry
+    - ReactiveCocoa (~> 2.5)
+
+DEPENDENCIES:
+  - WebViewCell (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - ReactiveCocoa
+
+EXTERNAL SOURCES:
+  WebViewCell:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  WebViewCell: 704353742c7f36a3b8e4e0cc08cb38eb06e247f4
+
+PODFILE CHECKSUM: 841d17b04624dd87bdf7dd144abf3275d8cdf6e0
+
+COCOAPODS: 1.7.4
