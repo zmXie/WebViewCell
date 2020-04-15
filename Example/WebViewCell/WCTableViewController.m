@@ -42,7 +42,9 @@
         }
         //该url会令KVO获取的高度无限增加
 //        [cell setDataDic:@{@"url":@"https://weibo.com/2803301701/I1UyxmEqg?type=comme"}];
-        [cell setDataDic:@{@"url":@"https://zhuanlan.zhihu.com/p/69247987"}];
+//        [cell setDataDic:@{@"url":@"https://zhuanlan.zhihu.com/p/69247987"}];
+        [cell setDataDic:@{@"url":@"http://www.medcircle.cn/osteoprosisonline/detail/254?type=2"}];
+        
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

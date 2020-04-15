@@ -59,12 +59,12 @@ typedef NS_ENUM (NSUInteger, ScrollState) {
     self.topOfWebViewInTable = [self convertPoint:self.webView.frame.origin toView:self.tableView].y;
     
     @weakify(self)
-    [[RACObserve(self, disableTableViewScroll) distinctUntilChanged] subscribeNext:^(id x) {
+    [[[RACObserve(self, disableTableViewScroll) distinctUntilChanged]takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
         @strongify(self)
         self.tableView.showsVerticalScrollIndicator = ![x boolValue];
         self.webView.scrollView.showsVerticalScrollIndicator = [x boolValue];
     }];
-    [[RACObserve(self.tableView, contentOffset) distinctUntilChanged] subscribeNext:^(id x) {
+    [[[RACObserve(self.tableView, contentOffset) distinctUntilChanged]takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
         @strongify(self)
         // 如果网页大小没有占一整屏幕，一直禁止滚动
         if (self.webView.height < self.tableView.height || self.isAutoScrollToBottom) {
@@ -93,7 +93,7 @@ typedef NS_ENUM (NSUInteger, ScrollState) {
             }
         }
     }];
-    [[RACObserve(self.webView.scrollView, contentOffset) distinctUntilChanged] subscribeNext:^(id x) {
+    [[[RACObserve(self.webView.scrollView, contentOffset) distinctUntilChanged]takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
         @strongify(self)
         if (self.isAutoScrollToBottom) {
             self.disableTableViewScroll = NO;

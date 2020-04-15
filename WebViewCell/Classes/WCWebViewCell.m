@@ -53,7 +53,7 @@
     }];
     
     @weakify(self)
-    [[[[RACObserve(self.webView.scrollView,contentSize) distinctUntilChanged] skip:1]throttle:0.5] subscribeNext:^(id x) {
+    [[[[[RACObserve(self.webView.scrollView,contentSize) distinctUntilChanged] skip:1]throttle:0.5]takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
         @strongify(self);
         NSLog(@"KVO:%@",x);
         CGFloat h = [x CGSizeValue].height;
